@@ -212,14 +212,14 @@
 
 						$.ajax(
 					    {
-					        url: "/APPCOFFEE/insertarencuesta",
+					        url: "/APPUYU/insertarencuesta",
 					        type: "POST",
 					        data: "xml="+xml+"&xmlt="+xmlt+"&dni="+$('#dni').val()+"&celular="+$('#celular').val(),
 					    }).done(function(pagina) 
 		                {
 
 					    	$(puntero).prop("disabled",false);
-					    	window.location.href = '/APPCOFFEE/atencione/'+idopcion;
+					    	window.location.href = '/APPUYU/atencione/'+idopcion;
 		                    $('#modalcargando').modal('hide');
 		                    //$('.cargandoreporte img').css("display", "none");
 

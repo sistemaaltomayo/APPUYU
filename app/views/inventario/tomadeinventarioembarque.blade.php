@@ -230,7 +230,7 @@
   </div>
 
 	<audio class="erroraudio" id="audioerror" style="display:none;" >
-	  <source src="/APPCOFFEE/audio/error.mp3" type="audio/mpeg">
+	  <source src="/APPUYU/audio/error.mp3" type="audio/mpeg">
 	</audio>
  
 
@@ -375,7 +375,7 @@
 
 	                    $.ajax(
 	                    {
-	                        url: "/APPCOFFEE/insertar-stock-inventario-embarque",
+	                        url: "/APPUYU/insertar-stock-inventario-embarque",
 	                        type: "POST",
 	                        data: "idstock="+puntero+"&stock="+suma,
 

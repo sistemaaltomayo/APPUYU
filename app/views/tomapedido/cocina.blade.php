@@ -190,11 +190,11 @@
 
 </div>
 	<audio class="player"  >
-	  <source src="/APPCOFFEE/audio/correcaminos_bip_bip.mp3" type="audio/mpeg">
+	  <source src="/APPUYU/audio/correcaminos_bip_bip.mp3" type="audio/mpeg">
 	  no soporta audio
 	</audio>
 	<audio class="player2"  >
-	  <source src="/APPCOFFEE/audio/alerta.mp3" type="audio/mpeg">
+	  <source src="/APPUYU/audio/alerta.mp3" type="audio/mpeg">
 	  no soporta audio
 	</audio>
 
@@ -212,7 +212,7 @@
 		hijo.html("");
 		$.ajax(
 	    {
-	        url: "/APPCOFFEE/mostrarnotaajax",
+	        url: "/APPUYU/mostrarnotaajax",
 	        type: "POST",
 	        data: "iddetallepedido="+iddetallepedido,//+"&detalle="+tabla.html(),
 	    }).done(function(pagina) 
@@ -229,7 +229,7 @@
 			
 			$.ajax({
 			type: "POST",
-			url: "/APPCOFFEE/atendido",
+			url: "/APPUYU/atendido",
 			data: "iddetped="+iddetped+"&mesa="+mesa,
 			dataType:"html",
 			success: function(data) 
@@ -267,7 +267,7 @@
 
 		$.ajax({
 			type: "POST",
-			url: "/APPCOFFEE/cocinaajax",
+			url: "/APPUYU/cocinaajax",
 			data: "codigo="+codigo+"&descripcion="+descripcion+"&cantidad="+cantidad+"&mesa="+mesa+"&fecha="+fecha+"&IdDetPed="+IdDetPed,
 			dataType:"html",
 			success: function(data) 

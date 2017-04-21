@@ -196,7 +196,7 @@
     	    	<div id="lista{{$item->Numero}}" style="display:none">
     	    			<div style="text-align:center;margin:7px auto;">Cargando Mesa
 
-    	    				<img src="/APPCOFFEE/img/guardando.gif" class="cargando" style="display:block;"/>
+    	    				<img src="/APPUYU/img/guardando.gif" class="cargando" style="display:block;"/>
 
     	    			</div>
 					    <table id="js-tabla{{$item->Numero}}" class="table" >
@@ -228,7 +228,7 @@
         </div>
 
             
-      <div class="cargando"><img src="/APPCOFFEE/img/cargando.gif" alt="cargando"></div>
+      <div class="cargando"><img src="/APPUYU/img/cargando.gif" alt="cargando"></div>
       
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -245,7 +245,7 @@
   <source id="mp3" type="audio/mpeg">
 </audio>
 <audio class="player2"  >
-  <source src="/APPCOFFEE/audio/alerta.mp3" type="audio/mpeg">
+  <source src="/APPUYU/audio/alerta.mp3" type="audio/mpeg">
   no soporta audio
 </audio>
 <div class="mesas" style="display:none;">{{$mesas}}</div>
@@ -284,7 +284,7 @@
 
 			$.ajax(
 		    {
-		        url: "/APPCOFFEE/cartajax",
+		        url: "/APPUYU/cartajax",
 		        type: "POST",
 		        data: "id="+id,//+"&id="+id,
 		    }).done(function(pagina) 
@@ -322,7 +322,7 @@
 					}else{
 						$.ajax(
 					    {
-					        url: "/APPCOFFEE/actualizarruc",
+					        url: "/APPUYU/actualizarruc",
 					        type: "POST",
 					        data: "numerodoc="+numerodoc+"&razonsocial="+razonsocial+"&idpedido="+idpedido,
 					    }).done(function(pagina) 
@@ -344,7 +344,7 @@
 			hijo.html("");
 			$.ajax(
 		    {
-		        url: "/APPCOFFEE/mostrarnotaajax",
+		        url: "/APPUYU/mostrarnotaajax",
 		        type: "POST",
 		        data: "iddetallepedido="+iddetallepedido,//+"&detalle="+tabla.html(),
 		    }).done(function(pagina) 
@@ -370,7 +370,7 @@
 				$(".idmesa").html(id);
 			    $.ajax(
 			    {
-			        url: "/APPCOFFEE/listaproductoajax",
+			        url: "/APPUYU/listaproductoajax",
 			        type: "POST",
 			        data: "numero="+name+"&idmesa="+id
 			    }).done(function(pagina) 
@@ -507,7 +507,7 @@
 		    
 			if(sw==0){
 					location.reload();
-					//window.location.href = '/APPCOFFEE/getion-toma-pedido';
+					//window.location.href = '/APPUYU/getion-toma-pedido';
 			}else{
 				if( nombrecli == ""){
 					$("#txt"+mtotal).focus();
@@ -523,7 +523,7 @@
 						$(".cargando").css("display", "block");
 						$.ajax({
 						type: "POST",
-						url: "/APPCOFFEE/insertarconajax",
+						url: "/APPUYU/insertarconajax",
 						data: "codigo="+codigo+"&descripcion="+descripcion+"&cantidad="+cantidad+"&mesa="+mtotal+"&precio="+precio+"&subtotal="+subtotal+"&idmesa="+idmesa+"&idproducto="+idproducto+"&idpedido="+idpedido+"&detalletexto="+detalletexto+"&nombrecli="+nombrecli+"&numerodoc="+numerodoc+"&razonsocial="+razonsocial,
 						dataType:"html",
 						success: function(data) 
@@ -559,7 +559,7 @@
 				$.ajax(
 			    {
 			    	type: "POST",
-			        url: "/APPCOFFEE/eliminarproductoajax",
+			        url: "/APPUYU/eliminarproductoajax",
 			        data: "iddetalle="+arrayiddetalle[0]+"&codigoeli="+iddetped+"&sumatotal="+sumatotal+"&idpedido="+idpedido,
 			        dataType:"html",
 			   	success: function(data) 
@@ -605,7 +605,7 @@
 			hijo.html("");
 			$.ajax(
 		    {
-		        url: "/APPCOFFEE/productodetajax",
+		        url: "/APPUYU/productodetajax",
 		        type: "POST",
 		        data: "idproducto="+idproducto+"&detalle="+tabla.html(),
 		    }).done(function(pagina) 

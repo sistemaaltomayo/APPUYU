@@ -33,12 +33,12 @@ App::before(function($request)
 
 	if ($posicion_coincidencia > 0) {
 
-	    if(Request::url()!='http://'.$cadena_buscada.':8080/APPCOFFEE/login'  && !Session::has('Usuario')){
+	    if(Request::url()!='http://'.$cadena_buscada.':8080/APPUYU/login'  && !Session::has('Usuario')){
 
 			return Redirect::to('/login');
 		}
 
-	    if( (Request::url()=='http://'.$cadena_buscada.':8080/APPCOFFEE/login' ||  Request::url()=='http://'.$cadena_buscada.':8080/APPCOFFEE')  && Session::has('Usuario')){
+	    if( (Request::url()=='http://'.$cadena_buscada.':8080/APPUYU/login' ||  Request::url()=='http://'.$cadena_buscada.':8080/APPUYU')  && Session::has('Usuario')){
 
 			return Redirect::to('/bienvenidos-coffee-and-arts');
 		}

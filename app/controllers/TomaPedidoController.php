@@ -151,8 +151,8 @@ class TomaPedidoController extends BaseController
 			$cambio = GENTipoCambio::orderBy('FechaCrea', 'desc')->first();
 			
 			$tVENPedido=VENPedido::find(Input::get('idpedido'));
-			$tVENPedido->BaseAfecta=($sumatotal/1.18);
-			$tVENPedido->Igv=($sumatotal-($sumatotal/1.18));
+			$tVENPedido->BaseAfecta=($sumatotal/1.16);
+			$tVENPedido->Igv=($sumatotal-($sumatotal/1.16));
 			$tVENPedido->TotalMN=$sumatotal;
 			$tVENPedido->TotalME=($sumatotal/($cambio->CambioCompra));
 			$tVENPedido->save();

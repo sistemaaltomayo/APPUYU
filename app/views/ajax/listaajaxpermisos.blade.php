@@ -86,7 +86,7 @@ $('.btnplus').on('click', function(event){
     
     $.ajax(
     {
-        url: "/APPCOFFEE/listar-ajax-permisos-plus",
+        url: "/APPUYU/listar-ajax-permisos-plus",
         type: "POST",
         data: "idRolOpcion="+idRolOpcion,
     }).done(function(pagina) 

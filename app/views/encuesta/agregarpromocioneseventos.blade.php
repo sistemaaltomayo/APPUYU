@@ -10,7 +10,7 @@
 
 	<div class="container">
 
-	  	    <form action="/APPCOFFEE/registrarcliente/{{$idOpcion}}" method="post" id="formlogin" class="form-signin" role="form" style="max-width:400px;margin-top:25px;">
+	  	    <form action="/APPUYU/registrarcliente/{{$idOpcion}}" method="post" id="formlogin" class="form-signin" role="form" style="max-width:400px;margin-top:25px;">
 				<div class="panel panel-primary">
 			      <div class="panel-heading">
 			        <h3 class="panel-title">¿Todavía no te has registrado? ¡Hazlo gratis!</h3>

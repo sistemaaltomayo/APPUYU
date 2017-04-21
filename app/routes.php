@@ -15,7 +15,7 @@
  	Route::any('/', 'AutentificacionController@actionLogin');
  	Route::any('/login', 'AutentificacionController@actionLogin');
  	Route::get('/cerrarsesion', 'AutentificacionController@actionCerrarSesion');
- 	Route::any('/bienvenidos-coffee-and-arts', 'AutentificacionController@actionBienvenidoCoffeeAndArts');
+ 	Route::any('/bienvenidos-bolivia-retail-solutions', 'AutentificacionController@actionBienvenidoCoffeeAndArts');
 
 
  	Route::any('/getion-permisos/{idOpcion}', 'AutentificacionController@actionListarPermisos');

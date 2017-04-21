@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <title>Coffee And Arts - Sistema Multiplataforma</title>
+        <title>Bolivia Retail Solutions SRL - Sistema Multiplataforma</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
         <link rel="icon" href="{{asset('img/logo.ico')}}"/>
@@ -23,7 +23,7 @@
                         <div class="panel panel-info" >
                                 <div class="panel-heading fondoaltomayo">
                                     <div class="panel-title" style='text-align:center;'>
-                                        {{ HTML::image('img/logo.png', 'logo altomayo') }}
+                                        {{ HTML::image('img/logo.jpg', 'logo altomayo') }}
                                     </div>
                                 </div>     
 

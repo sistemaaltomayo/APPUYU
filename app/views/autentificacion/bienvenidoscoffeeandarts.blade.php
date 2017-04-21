@@ -7,7 +7,7 @@
 
 		<div class="errorpagina">
 	        <div class="error-code m-b-10 m-t-20">Bienvenido <i class="fa fa-hand-paper-o"></i></div>
-	        <h3 class="font-bold">Sistema Multiplataforma COFFEE AND ARTS</h3>
+	        <h3 class="font-bold">Sistema Multiplataforma Bolivia Retail Solutions SRL</h3>
 
 	        <div class="error-desc">
 	            Seleccione una opción del menú y empecemos a trabajar  <br/>

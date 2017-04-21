@@ -78,7 +78,7 @@ class AutentificacionController extends BaseController
 					Session::put('zona', $zona);
 
 
-					return Redirect::to('bienvenidos-coffee-and-arts');
+					return Redirect::to('bienvenidos-bolivia-retail-solutions');
 
 				}
 				else

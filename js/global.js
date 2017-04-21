@@ -117,7 +117,7 @@ $( document ).ready(function() {
 
     	    $.ajax(
 	        {
-	            url: "/APPCOFFEE/listar-ajax-permisos",
+	            url: "/APPUYU/listar-ajax-permisos",
 	            type: "POST",
 	            data: "idRol="+idRol,
 	        }).done(function(pagina) 
@@ -185,7 +185,7 @@ $( document ).ready(function() {
 
                     $.ajax(
                     {
-                        url: "/APPCOFFEE/insertar-stock-inventario",
+                        url: "/APPUYU/insertar-stock-inventario",
                         type: "POST",
                         data: "idstock="+$(this).attr('id')+"&stock="+suma,
                     }).done(function(pagina) 
@@ -207,7 +207,7 @@ $( document ).ready(function() {
                             $("#S"+array[1]).siblings('.descripcion').find('.digito').html("<i class='fa fa-check-circle-o fa-lg' aria-hidden='true'></i>");
 
                         }else{
-                            window.location.href = '/APPCOFFEE/getion-inventario-cafeteria/'+idopcion;
+                            window.location.href = '/APPUYU/getion-inventario-cafeteria/'+idopcion;
                         }
                         
                     }); 
@@ -253,7 +253,7 @@ $( document ).ready(function() {
 
                 $.ajax(
                 {
-                    url: "/APPCOFFEE/insertar-stock-inventario",
+                    url: "/APPUYU/insertar-stock-inventario",
                     type: "POST",
                     data: "idstock="+$(this).attr('id')+"&stock="+suma,
                 }).done(function(pagina) 
@@ -273,7 +273,7 @@ $( document ).ready(function() {
                         $("#S"+array[1]).siblings('.descripcion').find('.digito').html("<i class='fa fa-check-circle-o fa-lg' aria-hidden='true'></i>");
 
                     }else{
-                        window.location.href = '/APPCOFFEE/getion-inventario-cafeteria/'+idopcion;
+                        window.location.href = '/APPUYU/getion-inventario-cafeteria/'+idopcion;
                     }
                     
                 });  
@@ -314,7 +314,7 @@ $( document ).ready(function() {
 
                 $.ajax(
                 {
-                    url: "/APPCOFFEE/insertar-stock-inventario",
+                    url: "/APPUYU/insertar-stock-inventario",
                     type: "POST",
                     data: "idstock="+$(this).attr('id')+"&stock="+suma,
                 }).done(function(pagina) 
@@ -335,7 +335,7 @@ $( document ).ready(function() {
                         $("#S"+array[1]).siblings('.descripcion').find('.digito').html("<i class='fa fa-check-circle-o fa-lg' aria-hidden='true'></i>");
 
                     }else{
-                        window.location.href = '/APPCOFFEE/getion-inventario-cafeteria/'+idopcion;
+                        window.location.href = '/APPUYU/getion-inventario-cafeteria/'+idopcion;
                     }
                     
                 }); 
@@ -376,13 +376,13 @@ $( document ).ready(function() {
             $("#modalcargando").modal();
             $.ajax(
             {
-                url: "/APPCOFFEE/insertar-usuario-toma-inventario",
+                url: "/APPUYU/insertar-usuario-toma-inventario",
                 type: "POST",
                 data: "usuarios="+usuarios+"&idtomaweb="+idtomaweb,
             }).done(function(pagina) 
             {
                 //console.log(pagina);
-                window.location.href = '/APPCOFFEE/usuarios-exitoso/'+idopcion;
+                window.location.href = '/APPUYU/usuarios-exitoso/'+idopcion;
 
             }); 
 
@@ -456,7 +456,7 @@ $( document ).ready(function() {
                     
                     $.ajax(
                     {
-                        url: "/APPCOFFEE/insertar-stock-inventario-artesania",
+                        url: "/APPUYU/insertar-stock-inventario-artesania",
                         type: "POST",
                         data: "idstock="+$(this).attr('id')+"&stock="+suma,
                     }).done(function(pagina) 
@@ -474,7 +474,7 @@ $( document ).ready(function() {
 
                             $('#plusstock').focus();
                         }else{
-                            window.location.href = '/APPCOFFEE/getion-inventario-market/'+idopcion;
+                            window.location.href = '/APPUYU/getion-inventario-market/'+idopcion;
                         }
                         
                     }); 
@@ -518,7 +518,7 @@ $( document ).ready(function() {
 
                 $.ajax(
                 {
-                    url: "/APPCOFFEE/insertar-stock-inventario-artesania",
+                    url: "/APPUYU/insertar-stock-inventario-artesania",
                     type: "POST",
                     data: "idstock="+$(this).attr('id')+"&stock="+suma,
                 }).done(function(pagina) 
@@ -537,7 +537,7 @@ $( document ).ready(function() {
 
                         $('#plusstock').focus();
                     }else{
-                         window.location.href = '/APPCOFFEE/getion-inventario-market/'+idopcion;
+                         window.location.href = '/APPUYU/getion-inventario-market/'+idopcion;
                     }
                     
                 });  
@@ -584,7 +584,7 @@ $( document ).ready(function() {
 
                 $.ajax(
                 {
-                    url: "/APPCOFFEE/insertar-stock-inventario-artesania",
+                    url: "/APPUYU/insertar-stock-inventario-artesania",
                     type: "POST",
                     data: "idstock="+$(this).attr('id')+"&stock="+suma,
                 }).done(function(pagina) 
@@ -604,7 +604,7 @@ $( document ).ready(function() {
                         $('#plusstock').focus();
 
                     }else{
-                         window.location.href = '/APPCOFFEE/getion-inventario-market/'+idopcion;
+                         window.location.href = '/APPUYU/getion-inventario-market/'+idopcion;
                     }
                     
                 }); 
@@ -627,13 +627,13 @@ $( document ).ready(function() {
         $("#modalcargando").modal();
         $.ajax(
         {
-            url: "/APPCOFFEE/insertar-usuario-toma-inventario-artesania",
+            url: "/APPUYU/insertar-usuario-toma-inventario-artesania",
             type: "POST",
             data: "usuarios="+usuarios+"&idtomaweb="+idtomaweb,
         }).done(function(pagina) 
         {
             //console.log(pagina);
-            window.location.href = '/APPCOFFEE/usuarios-exitoso-artesania/'+idopcion;
+            window.location.href = '/APPUYU/usuarios-exitoso-artesania/'+idopcion;
             //window.location.href = '/inventario/usuarios-exitoso-artesania';
 
         }); 
@@ -683,7 +683,7 @@ $( document ).ready(function() {
                     
                     $.ajax(
                     {
-                        url: "/APPCOFFEE/insertar-stock-inventario-embarque",
+                        url: "/APPUYU/insertar-stock-inventario-embarque",
                         type: "POST",
                         data: "idstock="+$(this).attr('id')+"&stock="+suma,
                     }).done(function(pagina) 
@@ -701,7 +701,7 @@ $( document ).ready(function() {
 
                             $('#plusstock').focus();
                         }else{
-                            window.location.href = '/APPCOFFEE/getion-inventario-embarque/'+idopcion;
+                            window.location.href = '/APPUYU/getion-inventario-embarque/'+idopcion;
                            // window.location.href = '/inventario/lista-toma-inventariocerro-embarque';
                         }
                         
@@ -747,7 +747,7 @@ $( document ).ready(function() {
 
                 $.ajax(
                 {
-                    url: "/APPCOFFEE/insertar-stock-inventario-embarque",
+                    url: "/APPUYU/insertar-stock-inventario-embarque",
                     type: "POST",
                     data: "idstock="+$(this).attr('id')+"&stock="+suma,
                 }).done(function(pagina) 
@@ -766,7 +766,7 @@ $( document ).ready(function() {
 
                         $('#plusstock').focus();
                     }else{
-                        window.location.href = '/APPCOFFEE/getion-inventario-embarque/'+idopcion;
+                        window.location.href = '/APPUYU/getion-inventario-embarque/'+idopcion;
                         //window.location.href = '/inventario/lista-toma-inventariocerro-embarque';
                     }
                     
@@ -813,7 +813,7 @@ $( document ).ready(function() {
 
                 $.ajax(
                 {
-                    url: "/APPCOFFEE/insertar-stock-inventario-embarque",
+                    url: "/APPUYU/insertar-stock-inventario-embarque",
                     type: "POST",
                     data: "idstock="+$(this).attr('id')+"&stock="+suma,
                 }).done(function(pagina) 
@@ -833,7 +833,7 @@ $( document ).ready(function() {
                         $('#plusstock').focus();
 
                     }else{
-                        window.location.href = '/APPCOFFEE/getion-inventario-embarque/'+idopcion;
+                        window.location.href = '/APPUYU/getion-inventario-embarque/'+idopcion;
                         //window.location.href = '/inventario/lista-toma-inventariocerro-embarque';
                     }
                     
@@ -858,13 +858,13 @@ $( document ).ready(function() {
         $("#modalcargando").modal();
         $.ajax(
         {
-            url: "/APPCOFFEE/insertar-usuario-toma-inventario-embarque",
+            url: "/APPUYU/insertar-usuario-toma-inventario-embarque",
             type: "POST",
             data: "usuarios="+usuarios+"&idtomaweb="+idtomaweb,
         }).done(function(pagina) 
         {
             //console.log(pagina);
-            window.location.href = '/APPCOFFEE/usuarios-exitoso-embarque/'+idopcion;
+            window.location.href = '/APPUYU/usuarios-exitoso-embarque/'+idopcion;
             //window.location.href = '/inventario/usuarios-exitoso-embarque';
 
         }); 
@@ -878,7 +878,7 @@ $( document ).ready(function() {
       
         $.ajax(
         {
-            url: "/APPCOFFEE/unidaddestinoajax",
+            url: "/APPUYU/unidaddestinoajax",
             type: "POST",
             data: "idunidadorigen="+$(this).val(),
         }).done(function(pagina) 
@@ -920,7 +920,7 @@ $( document ).ready(function() {
 
                     $.ajax(
                     {
-                        url: "/APPCOFFEE/convertir-unidad",
+                        url: "/APPUYU/convertir-unidad",
                         type: "POST",
                         data: "idorigen="+sorigen+"&iddestino="+sdestino+"&unidadorigen="+unidadorigen,
                     }).done(function(pagina) 
@@ -1073,7 +1073,7 @@ function checkpermiso(puntero,idopcion,idrol,nombreacc){
 		checkcadena = validarrellono(nombreacc,idopcion,true,idrol);
 		$.ajax(
         {
-            url: "/APPCOFFEE/activar-ajax-permisos",
+            url: "/APPUYU/activar-ajax-permisos",
             type: "POST",
             data: "idrol="+idrol+"&idopcion="+idopcion+"&checkcadena="+checkcadena+"&accion=1",
 
@@ -1097,7 +1097,7 @@ function checkpermiso(puntero,idopcion,idrol,nombreacc){
 
         $.ajax(
         {
-            url: "/APPCOFFEE/activar-ajax-permisos",
+            url: "/APPUYU/activar-ajax-permisos",
             type: "POST",
             data: "idrol="+idrol+"&idopcion="+idopcion+"&checkcadena="+checkcadena+"&accion=0",
 

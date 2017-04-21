@@ -235,7 +235,7 @@
 
 			$.ajax(
             {
-                url: "/APPCOFFEE/ajax-select-distrito",
+                url: "/APPUYU/ajax-select-distrito",
                 type: "POST",
                 data: { codprovincia : codprovincia },
 
@@ -276,7 +276,7 @@
 
 			$.ajax(
             {
-                url: "/APPCOFFEE/agregar-personal-termino-solicitud-ajax",
+                url: "/APPUYU/agregar-personal-termino-solicitud-ajax",
                 type: "POST",
                 data: { idsolicitud : idsolicitud, termino : termino, nombre : nombre, dni : dni },
 

@@ -282,13 +282,13 @@
 				$("#modalcargando").modal();
 				$.ajax(
 			    {
-			        url: "/APPCOFFEE/ajaxagregarchecklist",
+			        url: "/APPUYU/ajaxagregarchecklist",
 			        type: "POST",
 			        data: { xml : xml , idlocalinspeccion : idlocalinspeccion},
 			    }).done(function(pagina) 
 			    {
 			    	$(puntero).prop("disabled",false);
-			    	window.location.href = '/APPCOFFEE/ajaxlistarchecklist/'+idOpcion;
+			    	window.location.href = '/APPUYU/ajaxlistarchecklist/'+idOpcion;
 			    });
 
 			}

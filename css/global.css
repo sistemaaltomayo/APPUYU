@@ -581,15 +581,15 @@ tbody{
 /*************************** LOGIN *******************************/
 
 .panel-info>.panel-heading{
-  background: #08257C;
-  color: #fff;
-  border-color :  #08257C;
+  background: #fff;
+  color: #000;
+  border-bottom: 3px solid #129846;
 }
 .panel-info{
-  border-color: #08257C;
+  border: 3px solid #FBD22D;
 }
 .panel-title img{
-  width: 100px;
+  width: 250px;
 }
 
 
