@@ -502,8 +502,7 @@
 			}
 
 			if(numerodoc.length==0){swruc=1;}
-		    if(numerodoc.length==8){swruc=1;}
-		    if(numerodoc.length==11){swruc=1;}
+			if(numerodoc.length>=4 && numerodoc.length<=11){swruc=1;}
 		    
 			if(sw==0){
 					location.reload();
