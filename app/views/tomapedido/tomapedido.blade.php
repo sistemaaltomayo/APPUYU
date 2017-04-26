@@ -306,8 +306,8 @@
 			$(".avisoruc").css("display", "none");
 
 			if(numerodoc.length==0){swruc=1;}
-		    if(numerodoc.length==8){swruc=1;}
-		    if(numerodoc.length==11){swruc=1;}
+		    if(numerodoc.length>=4 && numerodoc.length<=11){swruc=1;}
+		    //if(numerodoc.length==11){swruc=1;}
 
 			if(idpedido==""){
 				$(".avisoruc").css("display", "block");
@@ -317,7 +317,7 @@
 					if(swruc==0){
 						$(".avisoruc").css("display", "block");
 						$(".avisoruc").css("color", "#a94442");
-						$(".avisoruc").html("<strong>Error!</strong> Ingrese 8(DNI) ó 11(RUC) Digitos")
+						$(".avisoruc").html("<strong>Error!</strong> Ingrese 5(CI) a 12(NIT) Digitos")
 						$("#txtnd"+mtotal).focus();
 					}else{
 						$.ajax(
