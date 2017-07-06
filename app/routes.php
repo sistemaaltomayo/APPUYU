@@ -57,7 +57,9 @@
  	Route::any('/ajaxagregarchecklist', 'InspeccionController@actionajaxAgregarCheckList');
  	Route::any('/ajaxlistarchecklist/{idOpcion}', 'InspeccionController@actionajaxListarCheckList');
 
-
+ 	Route::any('/getion-libro-reclamaciones/{idOpcion}', 'EncuestaController@actionLibroReclamaciones');
+ 	Route::any('/agregar-reclamaciones/{idOpcion}', 'EncuestaController@actionAgregarReclamaciones');
+ 	Route::any('/insertar-libro-reclamaciones/{idOpcion}', 'EncuestaController@actionRegistrarLibroReclamaciones');
 /*****************************************************************************************************/ 
 /***************************************  Inventario ******************************************/
 
