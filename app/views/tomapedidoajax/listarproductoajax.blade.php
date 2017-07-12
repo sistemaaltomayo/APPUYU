@@ -2,7 +2,7 @@
 	<div class="col-xs-12 ruc">
 		<div class="col-ruc col-al-12 col-xs-4">
 			<div class="input-group">
-			  <input type="text" id="txtnd{{$numero}}" class="form-control numerodocumento" placeholder="Num. Documento" maxlength="12" value="@if(isset($listaProductoA[0]->IdPedido) && $listaProductoA[0]->IdPedido!=''){{$listaProductoA[0]->numerodocumento}}@endif">
+			  <input type="text" id="txtnd{{$numero}}" class="form-control numerodocumento" placeholder="5(CI) ó 12(NIT)" maxlength="12" value="@if(isset($listaProductoA[0]->IdPedido) && $listaProductoA[0]->IdPedido!=''){{$listaProductoA[0]->numerodocumento}}@endif">
 			  <span class="input-group-addon" id="basic-addon2">
 			       <span class="glyphicon glyphicon-registration-mark" aria-hidden="true" style="color:#286090"></span>
 			  </span>

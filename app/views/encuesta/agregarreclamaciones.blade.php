@@ -70,7 +70,7 @@
 						</div>
 
 						<div class="input-group grupo-imput">
-						    <span class="input-group-addon" id="basic-addon1">DNI / CE: </span>
+						    <span class="input-group-addon" id="basic-addon1">CI / CE: </span>
 						  	{{Form::text('dnice','', array('class' => 'solonumero form-control control', 'id' => 'dnice' , 'maxlength' => '20'))}}
 						</div>
 

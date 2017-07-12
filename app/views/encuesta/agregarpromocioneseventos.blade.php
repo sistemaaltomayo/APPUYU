@@ -21,7 +21,7 @@
 			        	<span class="input-group-addon"  id="basic-addon2">
 					       <span class="glyphicon glyphicon-qrcode" style="color:#286090" aria-hidden="true"></span>
 					  	</span>
-					  	<input type="text" name="txtDni" id="dni" maxlength="8" class="form-control" placeholder="Dni">
+					  	<input type="text" name="txtDni" id="dni" maxlength="5" class="form-control" placeholder="CI">
 					</div>
 					
 	  	        	<div class="input-group">
@@ -134,8 +134,8 @@
 
 			alertaMensajeGlobal+=(!valVacio($('#nombre').val()) ? '<strong>¡Error!</strong> Complete el campo Nombre<br>' : '');
 			alertaMensajeGlobal+=(!valVacio($('#apellido').val()) ? '<strong>¡Error!</strong> Complete el campo Apellido<br>' : '');
-			alertaMensajeGlobal+=(!valVacio($('#dni').val()) ? '<strong>¡Error!</strong> Complete el campo Dni<br>' : '');
-			alertaMensajeGlobal+=(!valCantidad($('#dni').val(),8) && $('#dni').val()!="" ? '<strong>¡Error!</strong> Dni son 8 Digitos<br>' : '');
+			alertaMensajeGlobal+=(!valVacio($('#dni').val()) ? '<strong>¡Error!</strong> Complete el campo CI<br>' : '');
+			alertaMensajeGlobal+=(!valCantidad($('#dni').val(),5) && $('#dni').val()!="" ? '<strong>¡Error!</strong> CI son 5 Digitos<br>' : '');
 			//alertaMensajeGlobal+=(!valVacio($('#nacimiento').val()) ? '<strong>¡Error!</strong> Complete el campo Fecha Nacimiento<br>' : '');
 			//alertaMensajeGlobal+=(!valVacio($('#profesion').val()) ? '<strong>¡Error!</strong> Complete el campo Profesión<br>' : '');
 			//alertaMensajeGlobal+=((!valVacio($('#telefono').val()) && !valVacio($('#celular').val())) ? '<strong>¡Error!</strong> Complete el campo Telefono o Celular<br>' : '');

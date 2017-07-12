@@ -305,8 +305,9 @@
 
 			$(".avisoruc").css("display", "none");
 
-			if(numerodoc.length==0){swruc=1;}
-		    if(numerodoc.length>=4 && numerodoc.length<=11){swruc=1;}
+			if(numerodoc.length>=0 && numerodoc.length<=4){swruc=1;}
+		    if(numerodoc.length>=6 && numerodoc.length<=11){swruc=1;}
+
 		    //if(numerodoc.length==11){swruc=1;}
 
 			if(idpedido==""){
@@ -314,10 +315,11 @@
 				$(".avisoruc").css("color", "#a94442");
 				$(".avisoruc").html("<strong>Error!</strong> Aún no tiene Pedido")	
 			}else{
-					if(swruc==0){
+
+					if(swruc==1){
 						$(".avisoruc").css("display", "block");
 						$(".avisoruc").css("color", "#a94442");
-						$(".avisoruc").html("<strong>Error!</strong> Ingrese 5(CI) a 12(NIT) Digitos")
+						$(".avisoruc").html("<strong>Error!</strong> Ingrese 5(CI) ó 12(NIT) Digitos")
 						$("#txtnd"+mtotal).focus();
 					}else{
 						$.ajax(
@@ -501,9 +503,13 @@
 				}
 			}
 
-			if(numerodoc.length==0){swruc=1;}
-			if(numerodoc.length>=4 && numerodoc.length<=11){swruc=1;}
-		    
+			/*if(numerodoc.length==0){swruc=1;}
+			if(numerodoc.length>=4 && numerodoc.length<=11){swruc=1;}*/
+		   
+		   	if(numerodoc.length>=1 && numerodoc.length<=4){swruc=1;}
+		    if(numerodoc.length>=6 && numerodoc.length<=11){swruc=1;} 
+
+
 			if(sw==0){
 					location.reload();
 					//window.location.href = '/APPUYU/getion-toma-pedido';
@@ -512,10 +518,10 @@
 					$("#txt"+mtotal).focus();
 					$(".tooltip").css("opacity", "1");
 				}else{
-					if(swruc==0){
+					if(swruc==1){
 						$(".avisoruc").css("display", "block");
 						$(".avisoruc").css("color", "#a94442");
-						$(".avisoruc").html("<strong>Error!</strong> Ingrese 8(DNI) ó 11(RUC) Digitos")
+						$(".avisoruc").html("<strong>Error!</strong> Ingrese 5(CI) ó 12(NIT) Digitos")
 						$("#txtnd"+mtotal).focus();
 					}else{
 						$(".tooltip").css("opacity", "0");
