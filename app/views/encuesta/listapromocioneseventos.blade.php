@@ -60,7 +60,7 @@
                                 </th>
 
                                 <th >
-                                    DNI 
+                                    CI 
                                 </th>
                                 <th>
                                     Nombre

@@ -65,7 +65,7 @@
                                    Fecha Creación 
                                 </th>
                                 <th>
-                                   DNI
+                                   CI
                                 </th>
                                 <th>
                                    Usuario Toma Encuesta

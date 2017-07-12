@@ -26,7 +26,7 @@
 		        	<span class="input-group-addon"  id="basic-addon2">
 				       <span class="glyphicon glyphicon-qrcode" style="color:#286090" aria-hidden="true"></span>
 				  	</span>
-				  	<input type="text" name="txtDni" id="dni"  maxlength="8" class="solonumero form-control" placeholder="Dni">
+				  	<input type="text" name="txtDni" id="dni"  maxlength="5" class="solonumero form-control" placeholder="CI">
 				</div>
 				<br>
 
@@ -250,10 +250,10 @@
 
 
 
-				alertaMensajeGlobal+=(!valVacio($('#dni').val()) ? '<strong>¡Error!</strong> Complete el campo Dni<br>' : '');
+				alertaMensajeGlobal+=(!valVacio($('#dni').val()) ? '<strong>¡Error!</strong> Complete el campo CI<br>' : '');
 				alertaMensajeGlobal+=(!valVacio($('#nombre').val()) ? '<strong>¡Error!</strong> Complete el campo Nombre<br>' : '');
 
-				alertaMensajeGlobal+=(!valCantidad($('#dni').val(),8) && $('#dni').val()!="" ? '<strong>¡Error!</strong> Dni son 8 Digitos<br>' : '');
+				alertaMensajeGlobal+=(!valCantidad($('#dni').val(),8) && $('#dni').val()!="" ? '<strong>¡Error!</strong> CI son 5 Digitos<br>' : '');
 				alertaMensajeGlobal+=(!valCantidad($('#celular').val(),9) && $('#celular').val()!="" ? '<strong>¡Error!</strong> Celular son 9 Digitos<br>' : '');
 
 
