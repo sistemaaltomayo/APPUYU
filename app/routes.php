@@ -46,6 +46,8 @@
  	Route::any('/agregar-encuesta/{idOpcion}', 'EncuestaController@actionAgregarEncuesta');
 	Route::any('/insertarencuesta', 'EncuestaController@actionInsertarEncuesta');
 	Route::any('/atencione/{idOpcion}', 'EncuestaController@actionAtencionE');
+	Route::any('/cambiaridioma/{idOpcion}', 'EncuestaController@actionCambiaridioma');
+
 
  	Route::any('/getion-eventos-promociones/{idOpcion}', 'EncuestaController@actionPromocionesEventos');
  	Route::any('/agregar-promociones-eventos/{idOpcion}', 'EncuestaController@actionAgregarPromocionesEventos');

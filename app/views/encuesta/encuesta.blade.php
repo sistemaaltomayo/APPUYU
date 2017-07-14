@@ -13,20 +13,46 @@
 @stop
 @section('section')
 
-<div class="container" style="margin-top:55px;">
+
+{{Form::open(array('method' => 'POST', 'url' => '/cambiaridioma/'.$idOpcion))}}
+
+	<div class="titulo col-xs-12 col-md-12 col-sm-12 col-lg-12">
+		<h4 style="text-align:center;">{{trans('encuesta.titulo')}}</h4>
+
+			<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 col-lg-offset-8">
+				<div class="input-group grupo-imput">
+				    <span class="input-group-addon" id="basic-addon1">{{trans('encuesta.cmb_idioma')}}: </span>
+				    {{ Form::select('idioma', $comboidioma, array(),['class' => 'form-control control' , 'id' => 'idioma']) }}
+				</div>
+			</div>  	
+	</div>
+
+{{Form::close()}}
+
+
+<div class="container" style="margin-top:100px;">
+
+
 
 	<div class="panel panel-primary" style="margin-top:25px;">
-      <div class="panel-heading">
-        <h3 class="panel-title">Le damos la bienvenida a la Encuesta de Satisfacción del Cliente. Valoramos su opinión y agradecemos que dedique su tiempo en completar nuestra encuesta.</h3>
-      </div>
-      <div class="panel-body">
+
+     	<div class="panel-heading">
+        	<h3 class="panel-title">{{trans('encuesta.titulo_general')}}</h3>
+      	</div>
+
+    
+
+
+      	<div class="panel-body">
+
+
 
 			<div class="col-xs-12 col-md-12 encuestanombre">
 				<div class="input-group">
 		        	<span class="input-group-addon"  id="basic-addon2">
 				       <span class="glyphicon glyphicon-qrcode" style="color:#286090" aria-hidden="true"></span>
 				  	</span>
-				  	<input type="text" name="txtDni" id="dni"  maxlength="12" class="solonumero form-control" placeholder="CI">
+				  	<input type="text" name="txtDni" id="dni"  maxlength="12" class="solonumero form-control" placeholder="{{trans('encuesta.input_dni')}}">
 				</div>
 				<br>
 
@@ -34,7 +60,7 @@
 		        	<span class="input-group-addon"  id="basic-addon2">
 				       <span class="glyphicon glyphicon-user" style="color:#286090" aria-hidden="true"></span>
 				  	</span>
-				  	<input type="text" name="txtNombre" id="nombre" maxlength="40" class="form-control" placeholder="Nombre">
+				  	<input type="text" name="txtNombre" id="nombre" maxlength="40" class="form-control" placeholder="{{trans('encuesta.input_nombre')}}">
 				</div>
 				<br>
 
@@ -42,7 +68,7 @@
 		        	<span class="input-group-addon"  id="basic-addon2">
 				       <span class="glyphicon glyphicon-phone" style="color:#286090" aria-hidden="true"></span>
 				  	</span>
-				  	<input type="text" name="txtCelular" id="celular" maxlength="9" class="solonumero form-control" placeholder="Celular" >
+				  	<input type="text" name="txtCelular" id="celular" maxlength="9" class="solonumero form-control" placeholder="{{trans('encuesta.input_celular')}}" >
 				</div>
 
 			</div>
@@ -68,7 +94,7 @@
 
 								<div class="numero"><p>{{$contadorItem}}</p></div>
 								<div class="pregunta">
-									<p><b>{{$item->Descripcion}}</b></p>	
+									<p><b>{{$item->NombreIdioma}}</b></p>	
 								</div>
 							    <div class="funkyradio @if($item->DescripcionTipo=='Multiple') check @endif">
 								@if($item->DescripcionTipo=='Multiple') 
@@ -88,14 +114,14 @@
 						@if($item->DescripcionTipo=='Multiple') 
 						        <div class="funkyradio-success">
 						            <input type="checkbox" name="checkbox{{$contadorMultiple}}" id="checkbox{{$contador}}" value="{{$item->IdPreguntaRespuesta}}" />
-						            <label for="checkbox{{$contador}}">{{$item->DescripcionResp}}</label>
+						            <label for="checkbox{{$contador}}">{{$item->NombreRespuestaIdioma}}</label>
 					        	</div>
 						@else
 							@if($item->DescripcionTipo=='Unica') 
 
 							    <div class="funkyradio-success">
 						            <input type="radio" name="radio{{$contadorUnico}}" id="radio{{$contador}}" value="{{$item->IdPreguntaRespuesta}}" />
-						            <label for="radio{{$contador}}">{{$item->DescripcionResp}}</label>
+						            <label for="radio{{$contador}}">{{$item->NombreRespuestaIdioma}}</label>
 						        </div>
 
 							@else
@@ -107,11 +133,11 @@
 					@if($contrecomendacion == 5)
 
 								<div class="input-group grupo-imput">
-								    <span class="titulospan input-group-addon" id="basic-addon1">¿ALGUNA RECOMENDACION? </span>
+								    <span class="titulospan input-group-addon" id="basic-addon1">{{trans('encuesta.titulo_text')}} </span>
 								</div>
 
 								<br>
-								<textarea class="form-control textarea" id="recomendacion{{$contadorItem}}" rows="5" placeholder='¿ALGUNA RECOMENDACION? .....'></textarea>
+								<textarea class="form-control textarea" id="recomendacion{{$contadorItem}}" rows="5" placeholder='{{trans('encuesta.titulo_text')}} .....'></textarea>
 
 
 								{{--*/ $contrecomendacion = 0 /*--}}
@@ -142,7 +168,7 @@
 
 
 				
-				<button type="button" class="btn btn-success btnencuesta" id="guardarencuesta">Guardar</button>
+				<button type="button" class="btn btn-success btnencuesta" id="guardarencuesta">{{trans('encuesta.btn_guardar')}}</button>
 				<div class="alerta">
 				    @if(isset($alertaMensajeGlobal) && $alertaMensajeGlobal!='')
 					<div class="alert {{$claseAviso}}">
@@ -199,6 +225,13 @@
 	<script>
 		$(document).ready(function()
 		{
+
+
+			$('#idioma').change(function(){
+			    $('form').submit();
+			});
+
+
 			$("#guardarencuesta").click(function () {
 
 				
@@ -274,9 +307,7 @@
 						$("#modalcargando").modal();
 						puntero = this;
 						$(puntero).prop("disabled",true);
-
-						console.log(xml);
-
+						idioma = $('#idioma').val();
 
 						$.ajax(
 					    {
@@ -285,7 +316,7 @@
 					        url: "/APPUYU/insertarencuesta",
 					        type: "POST",
 					        //data: "xml="+xml+"&xmlt="+xmlt+"&dni="+$('#dni').val()+"&celular="+$('#celular').val()+"&nombre="+$('#nombre').val(),
-					        data: { xml : xml, xmlt : xmlt, dni : $('#dni').val(), celular : $('#celular').val(), nombre : $('#nombre').val() },	
+					        data: { xml : xml, xmlt : xmlt, dni : $('#dni').val(), celular : $('#celular').val(), nombre : $('#nombre').val(), idioma : idioma },	
 
 					    }).done(function(pagina) 
 		                {

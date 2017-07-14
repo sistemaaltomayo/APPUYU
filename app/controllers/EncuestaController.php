@@ -172,12 +172,51 @@ class EncuestaController extends BaseController
 	}	
 
 
+	public function actionCambiaridioma($idOpcion)
+	{
+
+		$idioma = Input::get('idioma');
+
+		Session::push('ididioma', $idioma);
+		return Redirect::to('/agregar-encuesta/'.$idOpcion)->with('ididioma',$idioma);
+
+
+	}
+
 
 	public function actionAgregarEncuesta($idOpcion)
 	{
 
+		
+
+		if(Session::get('ididioma')){
+
+
+
+			$idiomadefecto 	= Session::get('ididioma');
+
+			$idiomas 		= GENIdioma::where('Id','<>',$idiomadefecto)->lists('Nombre', 'Id');			
+			$idioma  		= GENIdioma::where('Id','=',$idiomadefecto)->first();
+			$comboidioma   	= array($idioma->Id => $idioma->Nombre) + $idiomas;
+			App::setLocale($idioma->Locale);
+
+		}else{
+
+			$idiomadefecto = 'LIM01CEN000000000001';
+			$comboidioma  	= GENIdioma::where('Activo','=',1)->lists('Nombre', 'Id');
+			App::setLocale('es');
+
+		}
+
+
+
 		$listaPregunta = DB::table('GEN.TipoRespuesta')
 		->join('GEN.Pregunta', 'GEN.TipoRespuesta.Id', '=', 'GEN.Pregunta.IdTipoRespuesta')
+        ->join('GEN.PreguntaIdioma', function($join) use ($idiomadefecto)
+        {
+            $join->on('GEN.PreguntaIdioma.IdPregunta', '=', 'GEN.Pregunta.Id')
+                 ->where('GEN.PreguntaIdioma.IdIdioma', '=', $idiomadefecto);
+        })
    		->leftJoin('GEN.PreguntaRespuesta', function($leftJoin)
 	        {
 	            $leftJoin->on('GEN.Pregunta.Id', '=', 'GEN.PreguntaRespuesta.IdPregunta')
@@ -188,15 +227,24 @@ class EncuestaController extends BaseController
 	            $leftJoin->on('GEN.Respuesta.Id', '=', 'GEN.PreguntaRespuesta.IdRespuesta')
 	            ->where('GEN.Respuesta.Activo', '=', 1);
 	        })
+   		->leftJoin('GEN.RespuestaIdioma', function($leftJoin) use ($idiomadefecto)
+	        {
+	            $leftJoin->on('GEN.RespuestaIdioma.IdRespuesta', '=', 'GEN.PreguntaRespuesta.IdRespuesta')
+	            ->where('GEN.RespuestaIdioma.IdIdioma', '=', $idiomadefecto);
+	        })   		
    		->where('GEN.Pregunta.Activo', '=', 1)
    		->orderBy('GEN.Pregunta.Numero', 'ASC')
-   		->select('GEN.Pregunta.Id','GEN.PreguntaRespuesta.Id as IdPreguntaRespuesta','GEN.TipoRespuesta.Descripcion as DescripcionTipo','GEN.Pregunta.Descripcion','GEN.Respuesta.Descripcion as DescripcionResp')
+   		->select('GEN.Pregunta.Id','GEN.PreguntaRespuesta.Id as IdPreguntaRespuesta',
+   				 'GEN.TipoRespuesta.Descripcion as DescripcionTipo','GEN.Pregunta.Descripcion','GEN.Respuesta.Descripcion as DescripcionResp',
+   				 'GEN.PreguntaIdioma.NombreIdioma','GEN.RespuestaIdioma.NombreRespuestaIdioma')
 	    ->get();
+
 
 		return View::make('encuesta/encuesta',
 						  [
-						   'listaPregunta' => $listaPregunta,
-						   'idOpcion' => $idOpcion
+						   'listaPregunta' 	=> $listaPregunta,
+						   'idOpcion' 		=> $idOpcion,
+						   'comboidioma' 	=> $comboidioma,
 						  ]
 						 );
 
@@ -211,6 +259,7 @@ class EncuestaController extends BaseController
 		$xmlt=explode('*', Input::get('xmlt'));
 		$dni=Input::get('dni');
 		$nombre=Input::get('nombre');
+		$idioma=Input::get('idioma');
 
 		$cont=0;
 		$celular=Input::get('celular');
@@ -232,8 +281,9 @@ class EncuestaController extends BaseController
 
 
 
-		$stmt = DB::connection('sqlsrv')->getPdo()->prepare('SET NOCOUNT ON;EXEC AM_ENCUESTAXML ?');
+		$stmt = DB::connection('sqlsrv')->getPdo()->prepare('SET NOCOUNT ON;EXEC AM_ENCUESTAXML ?,?');
         $stmt->bindParam(1, $xml ,PDO::PARAM_STR); 
+        $stmt->bindParam(2, $idioma ,PDO::PARAM_STR); 
         $stmt->execute();		
 	}
 
